@@ -10,17 +10,17 @@ var/const/SIGHT_PLANE = 1 // -1
 
 atom
 	plane = MAP_PLANE
-	
+
 	/**
 	 * Public On/Off for Opacity ++
-	 * 
+	 *
 	 * Used at compile time
 	 */
 	var/opacity_pp = 0
 
 	/**
 	 * Public On/Off for Opacity ++
-	 * 
+	 *
 	 * Used at runtime
 	 */
 	proc
@@ -38,14 +38,14 @@ atom
 		if(src.opacity_pp)
 			opacity = 1
 			overlays += list(/overlay/opacity, /overlay/shadow_hider)
-		
+
 
 overlay
 	parent_type = /atom/movable
 
 	/**
 	 * The opacity overlays makes the object opaque(solid) in the shadow plane.
-	 * 
+	 *
 	 * Put simply this object will now cast a shadow.
 	 */
 	opacity
@@ -66,7 +66,7 @@ mob
 	verb
 		/**
 		 * If you lose your distortion mask or want to see how it's built, you can use this function.
-		 * 
+		 *
 		 * Be sure to save output in /Generated folder
 		 */
 		generate_distortion_mask()

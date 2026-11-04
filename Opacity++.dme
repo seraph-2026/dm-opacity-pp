@@ -20,7 +20,9 @@
 #include "Code\Planes\Shadow.dm"
 #include "Code\Planes\ShadowHider.dm"
 #include "Code\Planes\Sight.dm"
+#ifdef __MAIN__ // BEGIN_DEMO
 #include "Demo\Demo.dm"
 #include "Demo\Map.dmm"
+#endif          // END_DEMO
 // END_INCLUDE
 

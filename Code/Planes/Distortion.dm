@@ -22,11 +22,8 @@ client
 		screen += distortion
 
 		/**
-		 * Determines how large we stretch the 256x256 distortion field.
+		 * Stretch the distortion field to the viewport
 		 */
-		var/stretchFactor = 2.375 // Stretches it beyond the edges of the map
+		var/viewportFactor = max(src.bound_width, src.bound_height) / OPP_MASK_SIZE // 1 // (max(src.bound_width, src.bound_height) / world.icon_size) / 13
 
-		// This will stretch it relative to the largest side of the viewport
-		var/viewportFactor =  (max(src.bound_width, src.bound_height) / world.icon_size) / 13
-		
-		distortion.transform = matrix(stretchFactor * viewportFactor,  MATRIX_SCALE)
+		distortion.transform = matrix(viewportFactor,  MATRIX_SCALE)

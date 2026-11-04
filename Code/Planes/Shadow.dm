@@ -10,7 +10,7 @@ shadow_plane
 		var/i
 		for(i in 1 to 4)
 			filters += filter(type="displace",size=i,render_source="*SHADOW_MASK",flags=FILTER_OVERLAY)
-			
+
 		for(i in 8 to 128 step 8)
 			filters += filter(type="displace",size=i,render_source="*SHADOW_MASK",flags=FILTER_OVERLAY)
 

@@ -1,7 +1,7 @@
 
 world
 	fps = 25
-	icon_size = 32	
+	icon_size = 32
 	view = "15x15" // 9x9 lowest functioning
 
 mob
@@ -29,6 +29,5 @@ turf
 
 		// Click on a wall tile to delete it
 		Click(location,control,params)
-			if(src in view(20)) // This works
-				new/turf(src)
+			new/turf(src)
 
