@@ -1,4 +1,7 @@
 
+/**
+ * This is the plane where we distort the blackness into the shape of shadows using the distortion mask in /Generated
+ */
 distortion
 	parent_type = /obj
 	icon = 'Generated/Distortion Mask.dmi'
@@ -6,7 +9,6 @@ distortion
 	appearance_flags = PIXEL_SCALE
 	screen_loc = "MIDDLE,MIDDLE"
 	mouse_opacity = 0
-
 
 client
 	var/distortion/distortion = new()
@@ -22,11 +24,9 @@ client
 		/**
 		 * Determines how large we stretch the 256x256 distortion field.
 		 */
-		var/stretchFactor = 2.375 // Tested well at 13x13
+		var/stretchFactor = 2.375 // Stretches it beyond the edges of the map
+
+		// This will stretch it relative to the largest side of the viewport
 		var/viewportFactor =  (max(src.bound_width, src.bound_height) / world.icon_size) / 13
 		
-		//distortion.transform = matrix(src.bound_width / 192, src.bound_height / 192, MATRIX_SCALE)
 		distortion.transform = matrix(stretchFactor * viewportFactor,  MATRIX_SCALE)
-
-		// (6 world.view) 13x13 viewport
-		// 608

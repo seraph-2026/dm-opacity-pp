@@ -24,8 +24,7 @@ turf
 
 	wall
 		icon_state = "wall"
-		overlays = list(/overlay/opacity, /overlay/shadow_hider)
-		opacity = 1
+		opacity_pp = 0
 		density = 1
 
 		// Click on a wall tile to delete it

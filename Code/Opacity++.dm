@@ -7,8 +7,38 @@ var/const/SHADOW_PLANE = -3 // -3 // Shadow plane
 var/const/SHADOW_HIDER_PLANE = -2 // -2 // Shows partially behind shadow
 var/const/SIGHT_PLANE = 1 // -1
 
+
 atom
 	plane = MAP_PLANE
+	
+	/**
+	 * Public On/Off for Opacity ++
+	 * 
+	 * Used at compile time
+	 */
+	var/opacity_pp = 0
+
+	/**
+	 * Public On/Off for Opacity ++
+	 * 
+	 * Used at runtime
+	 */
+	proc
+		opacity_pp_on()
+			opacity = 1
+			overlays += list(/overlay/opacity, /overlay/shadow_hider)
+
+		opacity_pp_off()
+			opacity = 0
+			overlays -= list(/overlay/opacity, /overlay/shadow_hider)
+
+
+	New()
+		..()
+		if(src.opacity_pp)
+			opacity = 1
+			overlays += list(/overlay/opacity, /overlay/shadow_hider)
+		
 
 overlay
 	parent_type = /atom/movable
