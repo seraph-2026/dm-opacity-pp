@@ -24,7 +24,7 @@ turf
 
 	wall
 		icon_state = "wall"
-		opacity_pp = 0
+		opacity_pp = 1
 		density = 1
 
 		// Click on a wall tile to delete it
