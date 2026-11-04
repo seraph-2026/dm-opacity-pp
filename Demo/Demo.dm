@@ -1,20 +1,16 @@
-/*
-	These are simple defaults for your project.
- */
 
 world
-	fps = 25		// 25 frames per second
-	icon_size = 32	// 32x32 icon size by default
-
-	view = "15x15"
-	// 9x9 lowest functioning
+	fps = 25
+	icon_size = 32	
+	view = "15x15" // 9x9 lowest functioning
 
 mob
 	icon = 'Player.dmi'
 
-	Click()
-		world << "Clicked"
-
+	Login()
+		..()
+		world << "Click anywhere on the ground to place a wall"
+		world << "\nThen click on any walls to delete them"
 
 obj
 	icon = 'Player.dmi'
@@ -22,6 +18,7 @@ obj
 turf
 	icon = 'Map.dmi'
 
+	// Click on the ground to place a wall tile
 	Click(location,control,params)
 		new/turf/wall(src)
 
@@ -31,11 +28,7 @@ turf
 		opacity = 1
 		density = 1
 
-		verb
-			test()
-				set src in view(20)
-				world << "test"
-
+		// Click on a wall tile to delete it
 		Click(location,control,params)
 			if(src in view(20)) // This works
 				new/turf(src)

@@ -1,3 +1,6 @@
+/**
+ * A plane that literally contains all the visible blackness
+ */
 blackness_plane
 	parent_type = /obj
 	plane = BLACKNESS_PLANE

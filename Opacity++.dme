@@ -15,12 +15,11 @@
 
 // BEGIN_INCLUDE
 #include "Code\Opacity++.dm"
-#include "Code\Planes\Planes.dm"
-#include "Code\Planes\Types\Blackness.dm"
-#include "Code\Planes\Types\Distortion.dm"
-#include "Code\Planes\Types\Shadow.dm"
-#include "Code\Planes\Types\ShadowHider.dm"
-#include "Code\Planes\Types\Sight.dm"
+#include "Code\Planes\Blackness.dm"
+#include "Code\Planes\Distortion.dm"
+#include "Code\Planes\Shadow.dm"
+#include "Code\Planes\ShadowHider.dm"
+#include "Code\Planes\Sight.dm"
 #include "Demo\Demo.dm"
 #include "Demo\Map.dmm"
 // END_INCLUDE

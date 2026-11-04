@@ -25,8 +25,6 @@ client
 		var/stretchFactor = 2.375 // Tested well at 13x13
 		var/viewportFactor =  (max(src.bound_width, src.bound_height) / world.icon_size) / 13
 		
-
-
 		//distortion.transform = matrix(src.bound_width / 192, src.bound_height / 192, MATRIX_SCALE)
 		distortion.transform = matrix(stretchFactor * viewportFactor,  MATRIX_SCALE)
 
